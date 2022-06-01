@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  infinitely_overcast:
+    image: "zetatauepsilon/infinitelyovercast"
+    command: python main.py
+    volumes:
+      - ~/InfinitelyOvercast/config.json:/python-flask/config.json
+    ports:
+      - "8080:8080"

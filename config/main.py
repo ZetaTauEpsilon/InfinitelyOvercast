@@ -7,9 +7,3 @@ class Config():
         self.json = json.load(open('config.json'))
         for key in self.json.keys():
             setattr(self, key, self.json[key])
-        self.envOverride()
-    
-    def envOverride(self):
-        for key in os.environ.keys():
-            if key in self.__slots__:
-                setattr(self, key, os.environ[key])
